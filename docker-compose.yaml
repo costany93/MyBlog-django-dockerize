@@ -6,3 +6,6 @@ services:
     # ici on le porte d'ecoute entre notre machine local et notre container
     ports:
       - '8000:8000'
+    # ici j'active le partage de fichier synchroniser entre notre macine local et notre container
+    volumes:
+      - .:/app
