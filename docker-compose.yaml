@@ -1,0 +1,8 @@
+services:
+  # ici on definit notre service
+  myblog:
+    # ici donne le build de notre projet django qui se situe dans notre environnement courant
+    build: .
+    # ici on le porte d'ecoute entre notre machine local et notre container
+    ports:
+      - '8000:8000'
