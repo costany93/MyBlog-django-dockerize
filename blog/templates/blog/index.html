@@ -1,7 +1,39 @@
+
 {% extends "base.html" %}
 
+{% load static %}
 {% block title %}Mon blog{% endblock title %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}">
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+    
+{% endblock css_files %}
+
+
 {% block body %}
-    <h1>Bienvenue dans mon block</h1>
+
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/mountains.jpg" %}" alt="Le createur de ce blog est prince">
+            <h2>Le blog Costany</h2>
+        </header>
+        <p>Bonjour je suis Prince et j'aime beaucoup le develloppemt d'application, surtout avec les bonnes technologies</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>Mes derniers posts</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+            
+        </ul>
+    </section>
+
+    <section id="abput">
+        <h2>Mon metier</h2>
+        <p>J'aime develloper des applications et surtout apprendre de nouvelles technolgies</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellat exercitationem reiciendis pariatur, deleniti quis non, dolorum in officiis minima distinctio omnis dolorem praesentium et. Consectetur molestiae voluptatem nam ullam.</p>
+    </section>
 {% endblock body %}
